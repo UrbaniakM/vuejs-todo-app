@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import TodoListItem from '@/components/TodoListItem';
 import { mount } from '@vue/test-utils'
 
