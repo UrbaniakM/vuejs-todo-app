@@ -14,9 +14,9 @@ module.exports = {
     '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest',
   },
+  transformIgnorePatterns: ['/node_modules/'],
   snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
   setupFiles: ['<rootDir>/test/unit/setup'],
-  mapCoverage: true,
   coverageDirectory: '<rootDir>/test/unit/coverage',
   collectCoverageFrom: [
     'src/**/*.{js,vue}',
@@ -24,5 +24,6 @@ module.exports = {
     '!src/router/index.js',
     '!**/node_modules/**',
   ],
-  testEnvironment: 'node',
+  testURL: 'http://localhost',
+  testEnvironment: 'jsdom',
 };
