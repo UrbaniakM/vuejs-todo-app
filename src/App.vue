@@ -1,13 +1,37 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <TodoList v-bind:todos="todos" />
   </div>
 </template>
 
 <script>
+import TodoList from './components/TodoList';
+
+
+const initialTodos = [
+  {
+    text: 'Write simple To-Do app in Vue',
+  },
+  {
+    text: 'Write simple To-Do app in SwiftUI for iOS',
+  },
+  {
+    text: 'Write simple To-Do app in Angular',
+  },
+  {
+    text: 'Write simple To-Do app in Kotlin for Android',
+  },
+];
+
 export default {
-  name: 'App',
+  components: {
+    TodoList,
+  },
+  data() {
+    return {
+      todos: initialTodos,
+    };
+  },
 };
 </script>
 
