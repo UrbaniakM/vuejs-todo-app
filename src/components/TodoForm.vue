@@ -1,11 +1,12 @@
 <template>
-  <form @on:submit.prevent="onSubmit" class="root">
+  <form @submit.prevent="onSubmit" class="root">
     <Input
       id="todo-name"
       :value="value"
       type="text"
       @submit="onSubmit"
       @change="onChange"
+      @keypress="onKeypress"
     />
   </form>
 </template>
@@ -19,7 +20,7 @@ export default {
   },
   data() {
     return {
-      value: 'abc'
+      value: ''
     };
   },
   props: {},
@@ -29,6 +30,11 @@ export default {
     },
     onChange(todoName) {
       this.value = todoName;
+    },
+    onKeypress(key, event) {
+      if (this.value.length > 15) {
+        event.preventDefault();
+      }
     }
   }
 };
