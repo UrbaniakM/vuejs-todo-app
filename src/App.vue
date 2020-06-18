@@ -7,31 +7,30 @@
 <script>
 import TodoList from './components/TodoList';
 
-
 const initialTodos = [
   {
-    text: 'Write simple To-Do app in Vue',
+    text: 'Write simple To-Do app in Vue'
   },
   {
-    text: 'Write simple To-Do app in SwiftUI for iOS',
+    text: 'Write simple To-Do app in SwiftUI for iOS'
   },
   {
-    text: 'Write simple To-Do app in Angular',
+    text: 'Write simple To-Do app in Angular'
   },
   {
-    text: 'Write simple To-Do app in Kotlin for Android',
-  },
+    text: 'Write simple To-Do app in Kotlin for Android'
+  }
 ];
 
 export default {
   components: {
-    TodoList,
+    TodoList
   },
   data() {
     return {
-      todos: initialTodos,
+      todos: initialTodos
     };
-  },
+  }
 };
 </script>
 
