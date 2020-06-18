@@ -1,5 +1,5 @@
 import TodoListItem from '@/components/TodoListItem';
-import { mount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils';
 
 
 describe('TodoListItem.vue', () => {
@@ -10,7 +10,7 @@ describe('TodoListItem.vue', () => {
 
     const wrapper = mount(TodoListItem, {
       propsData: { todo },
-    })
+    });
 
     expect(wrapper.exists()).toBeTruthy();
 

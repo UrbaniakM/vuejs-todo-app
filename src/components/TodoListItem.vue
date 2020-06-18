@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     clickedRemoveButton() {
-      this.$emit('clickedRemoveButton', this.todo.text);
+      this.$emit('clicked-remove-button', this.todo.text);
     },
   },
 };
