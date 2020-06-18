@@ -1,7 +1,13 @@
 <template>
   <div class="root">
     <label v-if="label" :for="id">{{ label }}</label>
-    <input :id="id" :type="type" :placeholder="placeholder" :pattern="pattern" :value="value" />
+    <input
+      :id="id"
+      :type="type"
+      :placeholder="placeholder"
+      :pattern="pattern"
+      v-model="value"
+    />
   </div>
 </template>
 
