@@ -19,12 +19,12 @@ export default {
   },
   data() {
     return {
-      xMark: "&#x2716;"
+      xMark: '&#x2716;'
     };
   },
   methods: {
     clickedRemoveButton() {
-      this.$emit("clicked-remove-button", this.todo.text);
+      this.$emit('clicked-remove-button', this.todo.text);
     }
   }
 };

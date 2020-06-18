@@ -43,10 +43,10 @@ export default {
   },
   methods: {
     submit() {
-      this.$emit("submit");
+      this.$emit('submit');
     },
     onChange(event) {
-      this.$emit("change", event.target.value);
+      this.$emit('change', event.target.value);
     }
   }
 };
