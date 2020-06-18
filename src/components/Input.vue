@@ -8,6 +8,7 @@
       :pattern="pattern"
       :value="value"
       @input.prevent="onChange"
+      @keypress="onKeypress"
       v-on:keyup.enter="submit"
     />
   </div>
@@ -47,6 +48,10 @@ export default {
     },
     onChange(event) {
       this.$emit('change', event.target.value);
+    },
+    onKeypress(event) {
+      const key = event.key || String.fromCharCode(event.keyCode);
+      this.$emit('keypress', key, event);
     }
   }
 };
