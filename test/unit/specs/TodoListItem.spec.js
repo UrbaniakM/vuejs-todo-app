@@ -1,15 +1,14 @@
-import TodoListItem from '@/components/TodoListItem';
-import { mount } from '@vue/test-utils';
+import TodoListItem from "@/components/TodoListItem";
+import { mount } from "@vue/test-utils";
 
-
-describe('TodoListItem.vue', () => {
-  it('should render correct contents', async () => {
+describe("TodoListItem.vue", () => {
+  it("should render correct contents", async () => {
     const todo = {
-      text: 'Todo text A',
+      text: "Todo text A"
     };
 
     const wrapper = mount(TodoListItem, {
-      propsData: { todo },
+      propsData: { todo }
     });
 
     expect(wrapper.exists()).toBeTruthy();
