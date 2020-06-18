@@ -6,40 +6,49 @@
       :type="type"
       :placeholder="placeholder"
       :pattern="pattern"
-      v-model="value"
+      :value="value"
+      @input.prevent="onChange"
+      v-on:keyup.enter="submit"
     />
   </div>
 </template>
-
 
 <script>
 export default {
   props: {
     id: {
       required: true,
-      type: String,
+      type: String
     },
     value: {
       required: true,
-      type: String,
+      type: String
     },
     label: {
       required: false,
-      type: String,
+      type: String
     },
     placeholder: {
       required: false,
-      type: String,
+      type: String
     },
     pattern: {
       required: false,
-      type: String,
+      type: String
     },
     type: {
-      required: false,
-      type: String,
-    },
+      required: true,
+      type: String
+    }
   },
+  methods: {
+    submit() {
+      this.$emit("submit");
+    },
+    onChange(event) {
+      this.$emit("change", event.target.value);
+    }
+  }
 };
 </script>
 
