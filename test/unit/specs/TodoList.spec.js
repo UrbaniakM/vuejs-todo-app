@@ -1,12 +1,12 @@
 import TodoList from '@/components/TodoList';
-import { mount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils';
 
 
 describe('TodoList.vue', () => {
   it('should render empty todos correctly', async () => {
     const wrapper = mount(TodoList, {
       propsData: { todos: [] },
-    })
+    });
 
     expect(wrapper.exists()).toBeTruthy();
 
@@ -15,22 +15,22 @@ describe('TodoList.vue', () => {
     expect(todoList.html().includes('Nothing left in the list.')).toBeTruthy();
 
     const ulElement = todoList.find('ul');
-    expect(ulElement.exists()).toBeFalsy()
+    expect(ulElement.exists()).toBeFalsy();
   });
 
   it('should render non-empty todos correctly', async () => {
     const todos = [
       {
-        text: 'Todo 1'
+        text: 'Todo 1',
       },
       {
-        text: 'Todo 2'
-      }
-    ]
+        text: 'Todo 2',
+      },
+    ];
 
     const wrapper = mount(TodoList, {
       propsData: { todos },
-    })
+    });
 
     expect(wrapper.exists()).toBeTruthy();
 
@@ -39,6 +39,6 @@ describe('TodoList.vue', () => {
     expect(todoList.html().includes('Nothing left in the list.')).toBeFalsy();
 
     const ulElement = todoList.find('ul');
-    expect(ulElement.exists()).toBeTruthy()
+    expect(ulElement.exists()).toBeTruthy();
   });
 });
